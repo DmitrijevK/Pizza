@@ -1,0 +1,21 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="Pizza.Models.zakazivaet">
+    
+    <StackLayout>
+        <StackLayout x:Name="friendStack">
+            <Label Text="Имя получателя" />
+            <Entry Text="{Binding Name}" FontSize="Medium" />
+            <Label Text="ЭВпишите номер пиццы" />
+            <Entry Text="{Binding Email}" FontSize="Medium" />
+            <Label Text="Ваш Телефон (для связи)" />
+            <Entry Text="{Binding Phone}" FontSize="Medium" />
+        </StackLayout>
+        <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+            <Button Text="Заказть и оплатить" Command="{Binding ListViewModel.SaveZakazCommand}" CommandParameter="{Binding}" />
+            <Button Text="Отменить" Command="{Binding ListViewModel.DeleteZakazCommand}" CommandParameter="{Binding}" />
+            <Button Text="Назад" Command="{Binding Path=ListViewModel.BackCommand}" />
+        </StackLayout>
+    </StackLayout>
+</ContentPage>
